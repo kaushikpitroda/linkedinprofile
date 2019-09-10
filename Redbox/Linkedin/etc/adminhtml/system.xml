@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="redbox" translate="label" sortOrder="10">
+            <label>Redbox Linkedin</label>
+        </tab>
+        <section id="linkedin" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Redbox Linkedin</label>
+            <tab>redbox</tab>
+            <resource>Redbox_Linkedin::redbox_config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="display_option" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Option (Linkedin Profile field)</label>
+                    <source_model>Redbox\Linkedin\Model\Config\Options</source_model>
+                </field>
+            
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,11 @@
+<?php
+$fieldStatus = $this->helper('Redbox\Linkedin\Helper\Data')->getLinkedinStatus();
+if($fieldStatus == 0 || $fieldStatus == 1) {
+?>
+<div class="field linkedin_profile <?php if ($fieldStatus==1) {?> required <?php }?>">
+    <label class="label" for="linkedin_profile"><span><?php /* @escapeNotVerified */ echo __('LinkedIn Profile') ?></span></label>
+    <div class="control">
+        <input type="text" name="linkedin_profile" maxlength="250" <?php if ($fieldStatus==1) {?> data-validate="{required:true, url:true}" <?php }?>>
+    </div>
+</div>
+<?php } ?>

@@ -1,0 +1,19 @@
+<?php 
+ if($block->isCustomerLoggedIn()) {
+  $fieldStatus = $this->helper('Redbox\Linkedin\Helper\Data')->getLinkedinStatus();
+
+?>
+<form action="<?php echo $block->escapeUrl($block->getUrl('redbox/customer')); ?>" method="post">
+<fieldset class="fieldset create account" <?php if($fieldStatus==1){?> data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" <?php }?>>
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Additional Information') ?></span></legend><br></p>
+ 
+<p>        <div class="field my_attribute <?php if($fieldStatus==1){?>required<?php }?>">
+            <label for="linkedin_profile" class="label"><span><?php /* @escapeNotVerified */ echo __('Linkedin Profile') ?></span></label>
+            <div class="control">
+                <input type="text" name="linkedin_profile" id="linkedin_profile" title="<?php /* @escapeNotVerified */ echo __('Linkedin Profile') ?>" class="input-text" <?php if($fieldStatus==1){?>data-validate="{required:true, url:true}"<?php }?> autocomplete="off" value="<?php echo $block->getMyLinkedinProfile($block->getCustomerId());?>">
+            </div>
+        </div>
+        <button type="submit" class="action save primary" title="Save"><span><?php echo __('Save');?></span></button>
+    </fieldset>
+	</form>
+ <?php }?>

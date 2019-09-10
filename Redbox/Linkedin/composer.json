@@ -1,0 +1,22 @@
+{
+    "name": "redbox/module-linkedin",
+    "description": "New Customer Custom Attribute.",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Redbox Digital",
+            "email": "kaushika.pitroda@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Redbox\\Linkedin\\": ""
+        }
+    }
+}
